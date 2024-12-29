@@ -49,14 +49,9 @@ static void	fill_image(t_image *image, t_input *input, void *mlx_ptr)
 		x = 0;
 		while (x < input->s_x)
 		{
-			if (y != input->s_y - 1 && x != input->s_x - 1)
-			{
+			if (x != input->s_x - 1)
 				trace_line(m[y][x], m[y][x + 1], image, mlx_ptr);
-				trace_line(m[y][x], m[y + 1][x], image, mlx_ptr);
-			}
-			else if (x != input->s_x - 1)
-				trace_line(m[y][x], m[y][x + 1], image, mlx_ptr);
-			else if (y != input->s_y - 1)
+			if (y != input->s_y - 1)
 				trace_line(m[y][x], m[y + 1][x], image, mlx_ptr);
 			x += 1;
 		}
